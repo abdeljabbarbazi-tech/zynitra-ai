@@ -9,41 +9,41 @@
 <body>
 
   <!-- HEADER HERO -->
-  <header class="hero">
+  <header class="hero fade-in">
     <!-- Logo -->
-    <img src="images/logo.jpg" alt="Zynitra AI Logo" class="logo">
+    <img src="images/logo.jpg" alt="Zynitra AI Logo" class="logo fade-in">
 
-    <h1>AI Automation for Businesses That Want to Scale</h1>
-    <p>We build simple and effective AI bots that automate customer support and repetitive tasks — without complexity.</p>
+    <h1 class="fade-in">AI Automation for Businesses That Want to Scale</h1>
+    <p class="fade-in">We build simple and effective AI bots that automate customer support and repetitive tasks — without complexity.</p>
 
     <!-- Hero Image -->
-    <img src="images/hero-ai.jpg" alt="AI Automation" class="hero-image">
+    <img src="images/hero-ai.jpg" alt="AI Automation" class="hero-image fade-in">
 
-    <div class="buttons">
+    <div class="buttons fade-in">
       <a href="#contact" class="btn primary">Get Started</a>
       <a href="#pricing" class="btn secondary">View Pricing</a>
     </div>
   </header>
 
   <!-- WHAT WE DO -->
-  <section class="section services">
+  <section class="section services fade-in">
     <h2>What We Do</h2>
     <p>Zynitra AI helps businesses save time and increase efficiency through smart automation.</p>
 
     <div class="pricing">
-      <div class="card">
+      <div class="card fade-in">
         <img src="images/chatbot.png" alt="AI Chatbots" class="service-icon">
         <h3>AI Chatbots</h3>
         <p>Customer support and lead automation.</p>
       </div>
 
-      <div class="card">
+      <div class="card fade-in">
         <img src="images/automation.png" alt="Business Automation" class="service-icon">
         <h3>Business Automation</h3>
         <p>Workflow optimization and repetitive tasks.</p>
       </div>
 
-      <div class="card">
+      <div class="card fade-in">
         <img src="images/custom-ai.png" alt="Custom AI" class="service-icon">
         <h3>Custom AI</h3>
         <p>Tailored AI solutions for your business.</p>
@@ -52,29 +52,29 @@
   </section>
 
   <!-- ABOUT US -->
-  <section class="section">
+  <section class="section fade-in">
     <h2>About Zynitra AI</h2>
     <p>We make artificial intelligence accessible, practical, and useful for real businesses.</p>
   </section>
 
   <!-- PRICING -->
-  <section class="section" id="pricing">
+  <section class="section fade-in" id="pricing">
     <h2>Pricing</h2>
 
     <div class="pricing">
-      <div class="card">
+      <div class="card fade-in">
         <h3>Starter Bot — €99</h3>
         <p>Basic AI chatbot with FAQ automation.</p>
         <a href="#contact" class="btn primary">Contact Us</a>
       </div>
 
-      <div class="card">
+      <div class="card fade-in">
         <h3>Business Bot — €199</h3>
         <p>Advanced chatbot with lead capture and custom flows.</p>
         <a href="#contact" class="btn primary">Contact Us</a>
       </div>
 
-      <div class="card">
+      <div class="card fade-in">
         <h3>Custom AI — From €299</h3>
         <p>Tailored automation and advanced integrations.</p>
         <a href="#contact" class="btn primary">Request a Quote</a>
@@ -83,11 +83,11 @@
   </section>
 
   <!-- CONTACT FORM -->
-  <section class="section" id="contact">
+  <section class="section fade-in" id="contact">
     <h2>Get in Touch</h2>
     <p>Tell us about your business and how we can help.</p>
 
-    <form action="https://formsubmit.co/abdeljabbar.bazi@gmail.com" method="POST" class="contact-form">
+    <form action="https://formsubmit.co/abdeljabbar.bazi@gmail.com" method="POST" class="contact-form fade-in">
       <input type="hidden" name="_subject" value="New inquiry from Zynitra AI website">
       <input type="hidden" name="_captcha" value="false">
 
@@ -99,9 +99,27 @@
     </form>
   </section>
 
-  <footer class="footer">
+  <footer class="footer fade-in">
     <p>© 2026 Zynitra AI</p>
   </footer>
+
+  <!-- ====== SCRIPT PARA FADE-IN ====== -->
+  <script>
+    const faders = document.querySelectorAll('.fade-in');
+
+    const appearOptions = { threshold: 0.1 };
+
+    const appearOnScroll = new IntersectionObserver(function(entries, observer) {
+      entries.forEach(entry => {
+        if(entry.isIntersecting){
+          entry.target.classList.add('visible');
+          observer.unobserve(entry.target);
+        }
+      });
+    }, appearOptions);
+
+    faders.forEach(fader => appearOnScroll.observe(fader));
+  </script>
 
 </body>
 </html>
