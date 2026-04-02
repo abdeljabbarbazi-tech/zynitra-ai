@@ -134,3 +134,33 @@ body {
   opacity: 1;
   transform: translateY(0);
 }
+/* ===== VIDEO SECTION (MITAD / MITAD) ===== */
+.video-wrapper {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 40px;
+  flex-wrap: wrap;
+}
+
+.video-left,
+.video-right {
+  flex: 1;
+  min-width: 300px;
+}
+
+.video-left iframe {
+  width: 100%;
+  height: 350px;
+  border-radius: 12px;
+}
+
+.video-right img {
+  width: 100%;
+  border-radius: 12px;
+  transition: transform 0.4s ease;
+}
+
+.video-right img:hover {
+  transform: scale(1.05);
+}
