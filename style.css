@@ -8,29 +8,24 @@ body {
   color: #FFFFFF;
 }
 
-/* ===== HERO ===== */
+/* ===== HERO FULL WIDTH ===== */
 .hero {
-  padding: 80px 20px;
+  padding: 120px 20px;
   text-align: center;
+  background: linear-gradient(rgba(11,11,11,0.6), rgba(11,11,11,0.6)), url('images/hero-ai.jpg') center/cover no-repeat;
+  color: #fff;
 }
 
-.hero-image {
-  max-width: 600px;
-  width: 100%;
-  margin: 40px auto 0;
-  display: block;
-  opacity: 0;
-  transform: translateY(30px);
-  transition: opacity 0.8s ease-out, transform 0.8s ease-out;
+.hero h1 {
+  font-size: 3em;
+  line-height: 1.2;
+  margin-bottom: 20px;
 }
 
-/* ===== SECCIONES ===== */
-.section {
-  padding: 60px 20px;
-  text-align: center;
-  opacity: 0;
-  transform: translateY(30px);
-  transition: opacity 0.8s ease-out, transform 0.8s ease-out;
+.hero p {
+  font-size: 1.2em;
+  max-width: 700px;
+  margin: 0 auto 40px;
 }
 
 /* ===== BOTONES ===== */
@@ -40,34 +35,74 @@ body {
 
 .btn {
   text-decoration: none;
-  padding: 12px 24px;
+  padding: 12px 28px;
   margin: 10px;
-  border-radius: 6px;
+  border-radius: 8px;
   display: inline-block;
+  font-weight: 600;
   transition: all 0.3s ease;
 }
 
 .primary {
-  background-color: #7B3FE4;
+  background: linear-gradient(90deg,#7B3FE4,#A98BFF);
   color: white;
 }
 
 .primary:hover {
-  background-color: #A98BFF;
   transform: translateY(-3px);
-  box-shadow: 0 4px 15px rgba(123, 63, 228, 0.5);
+  box-shadow: 0 8px 20px rgba(123,63,228,0.5);
 }
 
 .secondary {
-  border: 1px solid #7B3FE4;
+  border: 2px solid #7B3FE4;
   color: #7B3FE4;
 }
 
 .secondary:hover {
-  background-color: #7B3FE4;
-  color: #FFFFFF;
+  background: #7B3FE4;
+  color: #fff;
   transform: translateY(-3px);
-  box-shadow: 0 4px 15px rgba(123, 63, 228, 0.3);
+}
+
+/* ===== VIDEO + DESCRIPCIÓN ===== */
+.video-wrapper {
+  display: flex;
+  gap: 40px;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: center;
+  margin-top: 40px;
+}
+
+.video-left,
+.video-right {
+  flex: 1;
+  min-width: 320px;
+}
+
+.video-left iframe {
+  width: 100%;
+  height: 360px;
+  border-radius: 16px;
+}
+
+.video-right h2 {
+  font-size: 2em;
+  margin-bottom: 15px;
+}
+
+.video-right p {
+  font-size: 1.1em;
+  line-height: 1.5;
+}
+
+/* ===== SECCIONES ===== */
+.section {
+  padding: 60px 20px;
+  text-align: center;
+  opacity: 0;
+  transform: translateY(30px);
+  transition: all 0.8s ease-out;
 }
 
 /* ===== PRICING & CARDS ===== */
@@ -80,17 +115,54 @@ body {
 
 .card {
   background-color: #111;
-  padding: 20px;
-  border-radius: 8px;
-  width: 260px;
-  opacity: 0;
-  transform: translateY(30px);
-  transition: all 0.8s ease-out;
+  padding: 30px 20px;
+  border-radius: 12px;
+  width: 280px;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 10px 20px rgba(123,63,228,0.4);
 }
 
 .service-icon {
   width: 60px;
   margin-bottom: 15px;
+}
+
+/* ===== RESEÑAS ===== */
+.reviews-wrapper {
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+  flex-wrap: wrap;
+  margin-top: 30px;
+}
+
+.review-card {
+  background: #111;
+  padding: 25px;
+  border-radius: 12px;
+  width: 300px;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.review-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 25px rgba(123,63,228,0.4);
+}
+
+.review-card p {
+  font-size: 1em;
+  margin-bottom: 15px;
+  line-height: 1.4;
+}
+
+.review-card h4 {
+  font-weight: 600;
+  font-size: 0.9em;
+  color: #A98BFF;
 }
 
 /* ===== CONTACT FORM ===== */
@@ -105,7 +177,7 @@ body {
 .contact-form input,
 .contact-form textarea {
   padding: 12px;
-  border-radius: 6px;
+  border-radius: 8px;
   border: none;
   font-size: 14px;
 }
@@ -120,47 +192,17 @@ body {
   padding: 20px;
   text-align: center;
   font-size: 14px;
-  opacity: 0.6;
+  opacity: 0.8;
 }
 
-/* ===== CLASE PARA FADE-IN ===== */
+/* ===== FADE-IN ===== */
 .fade-in {
   opacity: 0;
   transform: translateY(30px);
-  transition: opacity 0.8s ease-out, transform 0.8s ease-out;
+  transition: all 0.8s ease-out;
 }
 
 .fade-in.visible {
   opacity: 1;
   transform: translateY(0);
-}
-/* ===== VIDEO SECTION (MITAD / MITAD) ===== */
-.video-wrapper {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  gap: 40px;
-  flex-wrap: wrap;
-}
-
-.video-left,
-.video-right {
-  flex: 1;
-  min-width: 300px;
-}
-
-.video-left iframe {
-  width: 100%;
-  height: 350px;
-  border-radius: 12px;
-}
-
-.video-right img {
-  width: 100%;
-  border-radius: 12px;
-  transition: transform 0.4s ease;
-}
-
-.video-right img:hover {
-  transform: scale(1.05);
 }
